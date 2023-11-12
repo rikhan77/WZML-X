@@ -10,7 +10,34 @@ class WZMLStyle:
 <b>Type {help_command} to get a list of available commands</b>'''
     ST_BOTPM = '''<i>Now, This bot will send all your files and links here. Start Using ...</i>'''
     ST_UNAUTH = '''<i>You Are not authorized user! Deploy your own WZML-X Mirror-Leech bot</i>'''
+    OWN_TOKEN_GENERATE = '''<b>Temporary Token is not yours!</b>\n\n<i>Kindly generate your own.</i>'''
+    USED_TOKEN = '''<b>Temporary Token already used!</b>\n\n<i>Kindly generate a new one.</i>'''
+    LOGGED_PASSWORD = '''<b>Bot Already Logged In via Password</b>\n\n<i>No Need to Accept Temp Tokens.</i>'''
+    ACTIVATE_BUTTON = 'Activate Temporary Token'
+    TOKEN_MSG = '''<b><u>Generated Temporary Login Token!</u></b>
+<b>Temp Token:</b> <code>{token}</code>
+<b>Validity:</b> {validity}'''
     # ---------------------
+    # async def token_callback(_, query): ---> __main__.py
+    ACTIVATED = '✅️ Activated ✅'
+    # ---------------------
+    # async def login(_, message): --> __main__.py
+    LOGGED_IN = '<b>Already Bot Login In!</b>'
+    INVALID_PASS = '<b>Invalid Password!</b>\n\nKindly put the correct Password .'
+    PASS_LOGGED = '<b>Bot Permanent Login Successfully!</b>'
+    LOGIN_USED = '<b>Bot Login Usage :</b>\n\n<code>/cmd [password]</code>'
+    # ---------------------
+    # async def log(_, message): ---> __main__.py
+    LOG_DISPLAY_BT = '📑 Log Display'
+    WEB_PASTE_BT = '📨 Web Paste (SB)'
+    # ---------------------
+    # async def bot_help(client, message): ---> __main__.py
+    BASIC_BT = 'Basic'
+    USER_BT = 'Users'
+    MICS_BT = 'Mics'
+    O_S_BT = 'Owner & Sudos'
+    CLOSE_BT = 'Close'
+    HELP_HEADER = "㊂ <b><i>Help Guide Menu!</i></b>\n\n<b>NOTE: <i>Click on any CMD to see more minor detalis.</i></b>"
 
     # async def stats(client, message):
     BOT_STATS = '''⌬ <b><i>BOT STATISTICS :</i></b>
@@ -120,7 +147,7 @@ class WZMLStyle:
     L_CC =                  '┖ <b>By: </b>{Tag}\n\n'
     PM_BOT_MSG =            '➲ <b><i>File(s) have been Sent above</i></b>'
     L_BOT_MSG =             '➲ <b><i>File(s) have been Sent to Bot PM (Private)</i></b>'
-    L_LL_MSG =              '➲ <b><i>File(s) have been Sent. Access via Links...</i></b>'
+    L_LL_MSG =              '➲ <b><i>File(s) have been Sent. Access via Links...</i></b>\n'
     
     # ----- MIRROR -------
     M_TYPE =                '┠ <b>Type: </b>{Mimetype}\n'
@@ -129,7 +156,6 @@ class WZMLStyle:
     RCPATH =                '┠ <b>Path: </b><code>{RCpath}</code>\n'
     M_CC =                  '┖ <b>By: </b>{Tag}\n\n'
     M_BOT_MSG =             '➲ <b><i>Link(s) have been Sent to Bot PM (Private)</i></b>'
-    
     # ----- BUTTONS -------
     CLOUD_LINK =      '☁️ Cloud Link'
     SAVE_MSG =        '📨 Save Message'
@@ -142,6 +168,7 @@ class WZMLStyle:
     CHECK_PM =        '📥 View in Bot PM'
     CHECK_LL =        '🖇 View in Links Log'
     MEDIAINFO_LINK =  '📃 MediaInfo'
+    SCREENSHOTS =     '🖼 ScreenShots'
     # ---------------------
 
     # def get_readable_message(): ---> bot_utilis.py
@@ -230,13 +257,17 @@ class WZMLStyle:
 ┎<b> Name :</b> {NAME} ( <code>{ID}</code> )
 ┠<b> Username :</b> {USERNAME}
 ┠<b> Telegram DC :</b> {DC}
-┖<b> Language :</b> {LANG}'''
+┖<b> Language :</b> {LANG}
+
+➲ <u><b>Available Args:</b></u>
+• <b>-s</b> or <b>-set</b>: Set Directly via Arg'''
 
     UNIVERSAL = '''㊂ <b><u>Universal Settings : {NAME}</u></b>
 
 ┎<b> YT-DLP Options :</b> <b><code>{YT}</code></b>
 ┠<b> Daily Tasks :</b> <code>{DT}</code> per day
 ┠<b> Last Bot Used :</b> <code>{LAST_USED}</code>
+┠<b> User Session :</b> <code>{USESS}</code>
 ┠<b> MediaInfo Mode :</b> <code>{MEDIAINFO}</code>
 ┠<b> Save Mode :</b> <code>{SAVE_MODE}</code>
 ┖<b> User Bot PM :</b> <code>{BOT_PM}</code>'''
